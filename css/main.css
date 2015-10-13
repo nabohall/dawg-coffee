@@ -1,1 +1,181 @@
 /* Your stylesheet goes here */
+
+/*import all necessary APIs and fonts*/
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300italic,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+
+/* The default, ie smallest, screen */
+body {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 16px;/*should be 20 on sm and bigger*/
+	font-weight: 300;
+	background-color: #E9EAEE;
+}
+
+h1, h2, h3 h4, h5, h6 { /* all headings*/
+	font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h2 {
+	color: #BC6026;
+}
+
+svg {
+	height: 1em;
+}
+
+nav {
+	position: fixed;
+	background-color: #181C22;
+	font-size: 16px;
+	padding-left: 15px;
+	width: 100%;
+}
+
+nav li {	
+
+	list-style: none;
+	display: inline;
+}
+
+nav a {
+	padding: .5em;
+	text-decoration: none;
+	color: white;
+	fill: currentColor;
+	font-variant: small-caps;
+}
+
+nav a:hover, nav a:focus {
+	text-decoration: none;
+	color: #D87E28;
+	fill: currentColor;
+}
+
+#header h1 {
+	padding-top: 3em;
+}
+
+.md_screen_material {
+	display: none;
+}
+
+#headline p{
+	font-style: italic;
+}
+
+dd {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+#story img {
+	float: right;
+	max-height: 300px;
+	margin-left: 1em;
+	border-radius: 5px;
+}
+
+#story {
+	background-color: #dbdce3;
+}
+
+footer {
+	border-top: 3px solid #D87E28;
+	background-color: #aFB3C2;
+	font-size: 12px;
+	padding-top: 1em;
+	clear: both;
+}
+
+
+/* All CSS for screens above 768 px */
+@media screen and (min-width: 768px) {
+	body {
+		font-size: 20px;
+	}
+
+	h2 {
+		text-align: center;
+		padding-bottom: 1em;
+	}
+
+	nav {
+		background-color: rgba(24, 28, 34, 0.8);
+	}
+
+	nav a {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	#header {
+		background-image: url("../img/background-sm.jpg");
+		background-repeat: no-repeat;
+		background-size: auto;
+		color: white;
+		text-align: right;
+		min-height: 550px;
+	}
+
+	.md_screen_material {
+		display: initial;
+	}
+
+	#headline {
+		font-size: 1.25em;
+		text-align: center;
+		margin-top: 3em;
+		margin-bottom: 3em;
+	}
+
+	#headline svg{
+		height: 1.5em;
+		margin-bottom: 1em;
+		fill: #D87E28;
+	}
+
+	#cafe {
+		background-color: #dbdce3;
+	}
+
+	#cafe img {
+		border-radius: 5px;
+	}
+
+	#cafe svg{
+		height: 1.5em;
+		margin-bottom: 1em;
+		fill: #D87E28;
+	}
+
+	#header img {
+		max-height: 400px;
+	}
+
+	#credits {
+		text-align: right;
+	}
+}
+
+/* All CSS for screens above 992px */
+@media screen and (min-width: 992px) {
+	#header {
+		background-image: url("../img/background-md.jpg");
+	}
+
+	#header h1 {
+		font-size: 4em;
+	}
+}
+
+/* All CSS for screens about 1200px */
+@media screen and (min-width: 1200px) {
+	#header {
+		background-image: url("../img/background-lg.jpg");
+	}
+}
+
