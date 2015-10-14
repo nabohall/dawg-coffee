@@ -1,0 +1,200 @@
+// The main scss file to generate main.css
+
+@import 'imports';
+
+$fall-back-fonts: 'Helvetica Neue', Helvetica, sans-serif;
+$default-color: #E9EAEE;
+$header-color: #BC6026;
+$accent-color: #D87E28;
+$navbar-color-xs: #181C22;
+$navbar-color-sm: rgba(24, 28, 34, 0.8);
+$clearing-space: 3em;
+$radius: 5px;
+
+@mixin svg-sm() {
+	height: 1.5em;
+	margin-bottom: 1em;
+	fill: $accent-color;
+}
+
+@mixin background-img($url) {
+	background-image: url($url);
+}
+
+/* All CSS for default (smallest screen) */
+
+body {
+	font-family: 'Lato', $fall-back-fonts;
+	font-size: 16px;
+	font-weight: 300;
+	background-color: $default-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', $fall-back-fonts;
+}
+
+h2 {
+	color: $header-color;
+}
+
+.md_screen_material {
+	display: hidden;
+}
+
+svg {
+	height: 1em;
+}
+
+dd {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+nav {
+	position: fixed;
+	background-color: $navbar-color-xs;
+	font-size: 16px;
+	padding-left: 15px;
+	width: 100%;
+
+	li {
+		list-style: none;
+		display: inline;
+	}
+
+	a {
+		padding: .5em;
+		text-decoration: none;
+		color: white;
+		fill: currentColor;
+		font-variant: small-caps;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: $accent-color;
+		fill: currentColor;
+	}
+
+	a:focus {
+		@extend a:hover;
+	}
+}
+
+header h1 {
+	padding-top: $clearing-space;
+}
+
+#headline p {
+	font-style: italic;
+}
+
+#story {
+	background-color: darken($default-color, 5%);
+
+	img {
+	float: right;
+	max-height: 300px;
+	margin-left: 1em;
+	border-radius: $radius;
+	}
+}
+
+#menu {
+	padding-top: $clearing-space;
+}
+
+#cafe {
+	@extend #menu;
+	background-color: darken($default-color, 5%);
+}
+
+footer {
+	border-top: 3px solid $accent-color;
+	background-color: darken($default-color, 20%);
+	font-size: 12px;
+	padding-top: 1em;
+	clear: both;
+}
+
+/* All CSS for screens above 768px */
+@media screen and (min-width: 768px) {
+	body {
+		font-size: 20px;
+	}
+
+	h2 {
+		text-align: center;
+		padding-bottom: 1em;
+	}
+
+	.md_screen_material {
+		display: initial;
+	}
+
+	nav {
+		background-color: $navbar-color-sm;
+
+		a {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+
+	header {
+		@include background-img("../img/background-sm.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: white;
+		text-align: right;
+		min-height: 550px;
+
+		img {
+			max-height: 400px;
+		}
+	}
+
+	#headline {
+		font-size: 1.25em;
+		text-align: center;
+		margin-top: 3em;
+		margin-bottom: 3em;
+
+		svg {
+			@include svg-sm();
+		}
+	}
+
+	#cafe {
+		img {
+			border-radius: $radius;
+		}
+
+		svg {
+			@include svg-sm();
+		}
+	}
+
+	#credits {
+		text-align: right;
+	}
+}
+
+/* All CSS for screens above 992px */
+@media screen and (min-width: 992px) {
+	header {
+		@include background-img("../img/background-md.jpg");
+
+		h1 {
+			font-size: 4em;
+		}
+	}
+}
+
+/* All CSS for screens above 1200px */
+@media screen and (min-width: 1200px) {
+	header{
+		@include background-img("../img/background-lg.jpg");
+	}
+}
